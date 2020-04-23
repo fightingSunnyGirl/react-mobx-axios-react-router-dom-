@@ -1,0 +1,50 @@
+{
+  "name": "my-app",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.5.0",
+    "@testing-library/user-event": "^7.2.1",
+    "autoprefixer": "^9.7.6",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-hot-loader": "^4.12.20",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "3.4.1",
+    "source-map-explorer": "^2.4.2"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "analyze": "source-map-explorer build/static/js/main.*"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "astroturf": "^0.10.4",
+    "babel-loader": "^8.1.0",
+    "css-loader": "^3.5.2",
+    "less": "^3.11.1",
+    "less-loader": "^5.0.0",
+    "postcss-loader": "^3.0.0",
+    "react-app-polyfill": "^1.0.6",
+    "style-loader": "^1.1.4",
+    "typescript": "^2.9.2"
+  }
+}
