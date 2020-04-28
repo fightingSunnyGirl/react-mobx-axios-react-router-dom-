@@ -1,74 +1,23 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+此项目基于 [Create React App]搭建，详情请参看(https://github.com/facebook/create-react-app).
+
+### 依赖安装 npm i 
 
 ## Available Scripts
 
 In the project directory, you can run:
 
-### `npm start`
+### 项目本地启动 `npm start`
+ [http://localhost:8082](http://localhost:8082) to view it in the browser
 
-Runs the app in the development mode.<br />
-Open [http://localhost:8082](http://localhost:8082) to view it in the browser.
+### 项目原始配置外露`npm run eject`
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+### 项目包大小分析图 npm run analyze
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
-
+### 项目打包 npm run build
 
 ### 配置less
+安装依赖 npm i less less-loader -D
+需要npm run eject命令暴露原有配置 然后再继续操作
 找到node_modules里面的react-scripts=>config=>webpack.config.js
 顶部新增引入 
 const lessRegex = /\.less$/;
@@ -76,30 +25,62 @@ const lessModuleRegex = /\.module\.less$/;
 
 rules里面新增一条
   {
-              test: lessRegex,
-              exclude: sassModuleRegex,
-              use: getStyleLoaders(
-                {
-                  importLoaders: 2,
-                  sourceMap: isEnvProduction && shouldUseSourceMap,
-                },
-                'less-loader'
-              ),
-              sideEffects: true,
-            },
-            {
-              test: lessModuleRegex,
-              use: getStyleLoaders(
-                {
-                  importLoaders: 2,
-                  sourceMap: isEnvProduction && shouldUseSourceMap,
-                  modules: true,
-                  getLocalIdent: getCSSModuleLocalIdent,
-                },
-                'less-loader'
-              ),
-            },
+    test: lessRegex,
+    exclude: sassModuleRegex,
+    use: getStyleLoaders(
+      {
+        importLoaders: 2,
+        sourceMap: isEnvProduction && shouldUseSourceMap,
+      },
+      'less-loader'
+    ),
+    sideEffects: true,
+  },
+  {
+      test: lessModuleRegex,
+      use: getStyleLoaders(
+        {
+          importLoaders: 2,
+          sourceMap: isEnvProduction && shouldUseSourceMap,
+          modules: true,
+          getLocalIdent: getCSSModuleLocalIdent,
+        },
+        'less-loader'
+      ),
+    },
 
-###端口号配置
+### 端口号配置
 找到node_modules里面的react-scripts=>script=>start.js 
 const DEFAULT_PORT = parseInt(process.env.PORT, 10) || 8082;
+
+### 本地代理
+配置不支持普通的直接配置webpack.config.js
+详情请看setUpProxy
+
+### 关闭eslint
+react-scripts=> config => webpack.config.js =>341行 注释掉以下代码
+    {
+      test: /\.(js|mjs|jsx|ts|tsx)$/,
+      enforce: 'pre',
+      use: [
+         {
+           options: {
+             cache: true,
+             formatter: require.resolve('react-dev-utils/eslintFormatter'),
+             eslintPath: require.resolve('eslint'),
+             resolvePluginsRelativeTo: __dirname,
+             // @remove-on-eject-begin
+             ignore: isExtendingEslintConfig,
+             baseConfig: isExtendingEslintConfig
+               ? undefined
+               : {
+                   extends: [require.resolve('eslint-config-react-app')],
+                 },
+             useEslintrc: isExtendingEslintConfig,
+             // @remove-on-eject-end
+           },
+           loader: require.resolve('eslint-loader'),
+         },
+       ],
+       include: paths.appSrc,
+     },
