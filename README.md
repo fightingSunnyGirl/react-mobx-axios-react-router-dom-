@@ -1,19 +1,23 @@
 此项目基于 [Create React App]搭建，详情请参看(https://github.com/facebook/create-react-app).
 
-### 依赖安装 npm i 
+### 依赖安装 
+npm i 
 
 ## Available Scripts
-
 In the project directory, you can run:
 
-### 项目本地启动 `npm start`
+### 项目本地启动 
+`npm start`
  [http://localhost:8082](http://localhost:8082) to view it in the browser
 
-### 项目原始配置外露`npm run eject`
+### 项目原始配置外露
+`npm run eject`
 
-### 项目包大小分析图 npm run analyze
+### 项目包大小分析图 
+npm run analyze
 
-### 项目打包 npm run build
+### 项目打包 
+npm run build
 
 ### 配置less
 安装依赖 npm i less less-loader -D
