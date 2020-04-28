@@ -88,3 +88,16 @@ react-scripts=> config => webpack.config.js =>341行 注释掉以下代码
        ],
        include: paths.appSrc,
      },
+
+### 引入antd
+package.json配置 
+1."babel": {
+    "presets": [
+      "react-app"
+    ],
+    "plugins": [
+      ["import", { "libraryName": "antd", "libraryDirectory": "es", "style": "css" }]
+    ]
+  }
+
+2.在APP.css 引入样式，@import '~antd/dist/antd.css';

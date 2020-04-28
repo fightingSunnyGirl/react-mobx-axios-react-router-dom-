@@ -125,7 +125,6 @@ export function http(type, url, params) {
 }
 
 
-// 新上传
 /**
 * 图片上传第一步
 * @params => file为 你读取成功的回调文件信息,
@@ -161,7 +160,9 @@ export function upLoaderImgYoupaiyun(file, uploadChannel) {
   )
 }
 
-// 上传第二步
+/**
+ * 上传第二步
+ * */ 
 function upLoaderImgNext(file, resData) {
   //new 一个FormData格式的参数
   var params = new FormData();

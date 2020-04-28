@@ -1,7 +1,9 @@
 import React , { Component } from 'react';
 import { hot } from "react-hot-loader";
 import './App.css';
-import UselessTest from "./views/useless";
+
+// import UselessTest from "./views/useless";
+import AntdExample from "./views/useAntd";
 import {ExampleEffectHook} from "./views/useHook";
 class App extends Component{
   handleClick=()=>{
@@ -15,8 +17,9 @@ class App extends Component{
   render(){
     return (
       <div className="App">
-        <UselessTest />
+        {/* <UselessTest /> */}
         <ExampleEffectHook />
+        <AntdExample />
       </div>
     );
   }
