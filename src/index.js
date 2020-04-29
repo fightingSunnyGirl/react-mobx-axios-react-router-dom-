@@ -5,10 +5,17 @@ import 'react-app-polyfill/stable';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import routes from './router/index'
+import { Provider } from 'react-redux';
+import store from './redux/index';
+import { ConfigProvider } from 'antd';//在antd里面使用react的context
+import zhCN from 'antd/es/locale/zh_CN';
 
 ReactDOM.render(
-    <App />,
+  <ConfigProvider locale={zhCN}>
+    <Provider store={store}>
+      <App />
+    </Provider>
+  </ConfigProvider>,
     document.getElementById('root')
 );
 

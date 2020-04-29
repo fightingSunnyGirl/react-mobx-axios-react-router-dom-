@@ -55,6 +55,9 @@ class App extends Component {
                 <Menu.Item key="5">
                   <Link to="/404">404</Link>
                 </Menu.Item>
+                <Menu.Item key="6">
+                  <Link to="/reduxTest">redux使用</Link>
+                </Menu.Item>
               </SubMenu>
               <SubMenu
                 key="sub2"
