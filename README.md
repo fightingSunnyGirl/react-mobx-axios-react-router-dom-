@@ -56,6 +56,7 @@ rules里面新增一条
 ### 端口号配置
 找到node_modules里面的react-scripts=>script=>start.js 
 const DEFAULT_PORT = parseInt(process.env.PORT, 10) || 8082;
+或者在package.json启动配置 "start":"set PORT=9000 && react-scripts start",
 
 ### 本地代理
 配置不支持普通的直接配置webpack.config.js
@@ -121,3 +122,4 @@ package.json配置
 
 ###  报错.bezierEasingMixin()
 将less降级到 2.7.3
+

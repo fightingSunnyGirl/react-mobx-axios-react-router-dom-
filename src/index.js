@@ -5,6 +5,7 @@ import 'react-app-polyfill/stable';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import routes from './router/index'
 
 ReactDOM.render(
     <App />,

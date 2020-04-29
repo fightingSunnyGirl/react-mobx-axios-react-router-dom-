@@ -1,6 +1,6 @@
 import React , { Component } from 'react';
 import '../assets/css/useless.less';
-import {get} from '../axios';
+import {get} from '../serve/axios';
 class UselessTest extends Component{
   getDate = ()=>{
     get('trial.h5.homepage.get').then(res=>{

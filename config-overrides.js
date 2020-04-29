@@ -12,7 +12,7 @@ module.exports = override(
    addLessLoader({
          javascriptEnabled: true,
          modifyVars: { 
-          // '@primary-color': '#ff2d52', // 全局主色
+          "primary-color": "#ff2d52", // 全局主色
           },
      }),
 );
