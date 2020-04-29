@@ -1,7 +1,7 @@
 import React , { Component } from 'react';
 import { hot } from "react-hot-loader";
+// import './assets/css/theme.less'
 import './App.css';
-
 // import UselessTest from "./views/useless";
 import AntdExample from "./views/useAntd";
 import {ExampleEffectHook} from "./views/useHook";

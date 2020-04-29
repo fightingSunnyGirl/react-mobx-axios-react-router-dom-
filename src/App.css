@@ -92,6 +92,5 @@ html {
     display: none;
   }
 
-/* 引入antd样式 */
-@import '~antd/dist/antd.css';
+
 

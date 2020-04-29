@@ -101,3 +101,23 @@ package.json配置
   }
 
 2.在APP.css 引入样式，@import '~antd/dist/antd.css';
+
+
+### react-app-rewired antd定制化解决方案 覆盖之前的
+安装 react-app-rewired
+根目录 新建文件 config-overrides.js
+
+### 项目启动修改
+  "scripts": {
++   "start": "react-app-rewired start",
++   "build": "react-app-rewired build",
++   "test": "react-app-rewired test",
+-   "start": "react-scripts start",
+-   "build": "react-scripts build",
+-   "test": "react-scripts test",
+    "eject": "react-scripts eject"
+}
+
+
+###  报错.bezierEasingMixin()
+将less降级到 2.7.3
