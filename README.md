@@ -70,4 +70,5 @@ ts.config.json
 ### history模式下 Link跳转路由页面不更新
 详见App.tsx  exact={!!route.exact}
 
+### 项目目录概要
 ![Image text](https://github.com/fightingSunnyGirl/react-mobx-axios-react-router-dom-/blob/master/framework.png)
