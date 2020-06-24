@@ -26,7 +26,6 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 ### 关闭eslint
 详见craco.config.js
 
-
 ### 主题色配置  antd按需引入
 详见craco.config.js
 
@@ -70,3 +69,5 @@ ts.config.json
 
 ### history模式下 Link跳转路由页面不更新
 详见App.tsx  exact={!!route.exact}
+
+![Image text](https://github.com/fightingSunnyGirl/react-mobx-axios-react-router-dom-/blob/master/framework.png)
