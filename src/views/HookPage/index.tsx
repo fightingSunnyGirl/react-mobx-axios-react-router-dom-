@@ -2,10 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { Observer, useLocalStore } from 'mobx-react';
 import { Link } from 'react-router-dom';
 import hookStores from '@store/Hook';
-export interface IAppProps {
+
+interface IAppProps {
 }
 
-export default function Hook(props: IAppProps) {
+const Hook: React.FunctionComponent<IAppProps> = (props) =>{
   const [useName, setUseName] = useState('dog');
   const localStore = useLocalStore(() => hookStores);
 
@@ -32,3 +33,5 @@ export default function Hook(props: IAppProps) {
     </Observer>
   );
 }
+
+export default Hook;
