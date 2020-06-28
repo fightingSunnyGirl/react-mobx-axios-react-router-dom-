@@ -1,0 +1,47 @@
+@import '~antd/es/style/themes/default.less';
+.container1200{
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.footer_box{
+  background-color: #ffffff;
+  padding-top: 30px;
+  margin-top: 20px;
+  .footer_main_body{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .footer_box_item{
+        display: flex;
+        align-items: center;
+        color: #999999;
+        .item_img{
+          width: 50px;
+          height: 56px;
+          background-color: @primary-color;
+          margin-right: 20px;
+        }
+        .footer_box_item_desc{
+          p{
+            &:nth-child(1){
+              font-size: 16px;
+              color: #333333;
+              line-height: 36px;
+              font-weight: bold;
+            }
+          }
+        }
+      }
+  }
+  .copyright{
+    margin-top: 48px;
+    text-align: center;
+  }
+  .internet_content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 50px;
+  }
+}

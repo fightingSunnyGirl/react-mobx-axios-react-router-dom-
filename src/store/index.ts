@@ -25,7 +25,6 @@ let storeStemps:any = sessionStorage.getItem("store") || null;
 let u = navigator.userAgent;
 if(u.indexOf("iPhone") > -1 || u.indexOf("iOS") > -1){
   window.addEventListener("pagehide", () => {
-
     sessionStorage.setItem("store", JSON.stringify(stores))
   })
 }else{
@@ -33,4 +32,5 @@ if(u.indexOf("iPhone") > -1 || u.indexOf("iOS") > -1){
     sessionStorage.setItem("store", JSON.stringify(stores))
   })
 }
+
 export default stores;

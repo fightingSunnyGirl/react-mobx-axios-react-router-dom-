@@ -6,6 +6,7 @@
     "moment": "2.24.0"
   },
   "dependencies": {
+    "@ant-design/icons": "^4.2.1",
     "antd": "^4.3.5",
     "axios": "^0.19.2",
     "craco-less": "^1.17.0",

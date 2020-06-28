@@ -9,11 +9,11 @@ import stores from '@store/index';
 import { ConfigProvider } from 'antd';// 解决日期组建 中英文夹杂问题
 import moment from 'moment';
 import 'moment/locale/zh-cn';
-moment.locale('zh-cn');
+import 'mobx-react-lite/batchingForReactDom';
 import './index.css';
 import App from './App';
-import 'mobx-react-lite/batchingForReactDom';
 
+moment.locale('zh-cn');
 
 ReactDOM.render(
   <Provider  {...stores}>
