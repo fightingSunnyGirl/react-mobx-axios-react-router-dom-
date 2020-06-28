@@ -21,6 +21,7 @@ class Home {
     this.testParams = p1;
     getTodayNew().then(res=>{
       const result = res.data;
+      if(!result) return;
       if(result.code == 200){
         this.todayNews = result.data.today_new
       }else{

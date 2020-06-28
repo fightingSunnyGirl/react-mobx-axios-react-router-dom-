@@ -37,6 +37,7 @@ export default class Test extends React.Component<any, IAppState> {
 
   componentDidMount() {
     const { Test, match } = this.props;
+    console.log(this.props)
     const url = match.url;
     Test.getPathName(url);
     // 参数获取

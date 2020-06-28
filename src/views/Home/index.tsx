@@ -24,6 +24,7 @@ export default class Home extends React.Component<any, IAppState> {
     }
   }
 
+
   
   componentDidMount(){
   const { Home } = this.props;

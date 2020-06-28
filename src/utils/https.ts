@@ -3,6 +3,7 @@
  */
 import axios from 'axios';
 import qs from 'qs';
+import { Modal } from 'antd';
 import * as base from './base';
 const request = axios.create({
   timeout: 30000,
@@ -26,20 +27,28 @@ request.interceptors.response.use(response => {
 });
 
 function checkStatus(response:any) {
+
   /**
    * loading
    * 如果http状态码正常，则直接返回数据
    * */ 
   if (response && (response.status == 200 || response.status == 304 || response.status == 400)) {
     if (response.data.code == 20003) {
-      alert("登录超时，请重新登录！")
+      Modal.error({
+        title: "登录超时，请重新登录！"
+      });
       return false;
     }
     return response;
   }
+
+  // 500等情况
+  Modal.error({
+    title: "网络异常!"
+  });
   return {
     status: 404,
-    msg: '网络异常'
+    msg: '网络异常!'
   }
 }
 
@@ -49,10 +58,14 @@ function checkCode(response:any) {
    * 可以弹出一个错误提示，告诉用户
    * */ 
   if (response.status == 404) {
-    alert(response.data.message)
+    Modal.error({
+      title: response.data.message
+    });
   }
   if (response.data && response.data.code != 200) {
-    alert(response.data.message)
+    Modal.error({
+      title: response.data.message
+    });
   }
   return response
 }

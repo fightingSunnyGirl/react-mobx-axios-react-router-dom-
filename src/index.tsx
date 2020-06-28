@@ -12,6 +12,8 @@ import 'moment/locale/zh-cn';
 moment.locale('zh-cn');
 import './index.css';
 import App from './App';
+import 'mobx-react-lite/batchingForReactDom';
+
 
 ReactDOM.render(
   <Provider  {...stores}>
