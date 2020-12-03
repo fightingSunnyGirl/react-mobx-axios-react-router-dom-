@@ -35,6 +35,7 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 ### 配置别名
 两个文件一一对应 
 详见craco.config.js 
+``` bash
    webpack: {
     alias: {
       '@@': pathResolve('.'),
@@ -47,11 +48,13 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
       '@utils': pathResolve('src/utils')
     }
   },
-
+```
 ts.config.json 
 新增 "extends": "./paths.json"
 
 新增 path.json文件
+
+``` bash 
 {
   "compilerOptions": {
     "baseUrl": "src",
@@ -66,6 +69,7 @@ ts.config.json
     }
   }
 }
+```
 
 ### history模式下 Link跳转路由页面不更新
 详见App.tsx  exact={!!route.exact}
